@@ -102,7 +102,7 @@ eCheckbox.onchange = (event) => {
   }
 };
 
-ePlay.onclick = async () => {
+ePlay.onclick = () => {
   //validate game
 
   let game = eGame.value;
@@ -186,12 +186,12 @@ ePlay.onclick = async () => {
     gameCoords.lng = parseFloat(string.split(",")[1]);
   }
 
-  if (gameImage !== null) {
-    if ((await validateImageUrl(gameImage)) === false) {
-      inputError(eGame, "Error: invalid image");
-      return;
-    }
-  }
+  //if (gameImage !== null) {
+  //  if ((await validateImageUrl(gameImage)) === false) {
+  //    inputError(eGame, "Error: invalid image");
+  //    return;
+  //  }
+  //}
 
   window.open(game, "_blank");
 };
