@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  --light: #323232;
+  background: linear-gradient(135deg, var(--light) 25%, transparent 25%) -50px 0,
+    linear-gradient(225deg, var(--light) 25%, transparent 25%) -50px 0,
+    linear-gradient(315deg, var(--light) 25%, transparent 25%),
+    linear-gradient(45deg, var(--light) 25%, transparent 25%);
+  background-size: 2em 2em;
+  background-color: #2a2a2a;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 100vh;
+}
+
+#github {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(-15%, 35%);
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  width: 55%;
+  height: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo {
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  font-weight: bold;
+  color: #1c64f2;
+  text-shadow: -3px 1px 0 #00e1ff, -0.5px -1px 0 #2deaf1, 3px -1px 0 #f54be1,
+    -1px 1px 0 #2954fe;
+  font-size: 10vw;
+}
+
+.form {
+  width: 50%;
+  height: 30%;
+  text-align: center;
+}
+
+#form1 {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 3%;
+  height: 10%;
+  width: 47%;
+}
+
+#game {
+  width: 80%;
+}
+
+#play {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parent-height {
+  height: 100%;
+}
+
+.parent-width {
+  width: 100%;
+}
+
+#form2 {
+  display: none;
+  justify-content: center;
+  align-items: stretch;
+  gap: 3%;
+  height: 10%;
+  width: 75%;
+}
+
+#coordinates {
+  width: 38%;
+}
+
+.img-wrapper {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+#image {
+  width: 88%;
+}
+
+#checkbox {
+  width: 12%;
+  height: 100%;
+}
+
+#create {
+  width: 12%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.separator {
+  width: 100%;
+  height: 6%;
+}
