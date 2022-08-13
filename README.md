@@ -2,9 +2,11 @@
 
 Create [GeoGuessr](https://geoguessr.com) style pinpointing challenges for photos
 
-### [Play Now](https://raais.github.io/geotaggr)
-
 ![Screenshot](https://user-images.githubusercontent.com/64605172/184509255-ffa4e22c-52f0-4e8e-855c-b257ab53e425.png)
+
+### [Play Here](https://raais.github.io/geotaggr)
+
+#### [Example Game Here](https://raais.github.io/geotaggr/game?code=MjkuNjU3OTUwOTAyNTQwOTM2LDkxLjExNzAyODg4MTI2NjUmaHR0cHMlM0ElMkYlMkZpLmltZ3VyLmNvbSUyRndXdVI3Q1YuanBlZw)
 
 ## How to play?
 
