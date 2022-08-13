@@ -60,6 +60,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  pointer-events: none;
   z-index: 5000;
 }
 
@@ -67,11 +68,15 @@ body {
   position: relative;
 }
 
+.reset-pointer-events {
+  pointer-events: auto;
+}
+
 .top-nav-left-bottom {
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translate(-60%, 150%);
+  transform: translate(-65%, 150%);
 }
 
 .low-opacity {
