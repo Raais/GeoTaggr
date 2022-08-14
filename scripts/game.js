@@ -21,6 +21,8 @@ const eNotesText = document.getElementById("notes-text");
 const eNotesToggle = document.getElementById("notes-toggle");
 const eMap = document.getElementById("map");
 
+const appName = "geotaggr"; //forks may have to change this
+
 var hoveringDropZone = false;
 
 //Canvas
@@ -178,7 +180,7 @@ eNotesToggle.onclick = toggleNotes;
 
 //Events - Return
 eReturn.onclick = () => {
-  window.open("https://" + window.location.hostname, "_blank");
+  window.open("https://" + window.location.hostname + "/" + appName, "_blank");
 };
 
 //Game configuration

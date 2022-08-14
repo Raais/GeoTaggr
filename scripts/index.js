@@ -29,7 +29,7 @@ const eUrlcodeCopy = document.getElementById("urlcode-copy");
 const eUnmasked = document.getElementById("unmasked");
 const eUnmaskedCopy = document.getElementById("unmasked-copy");
 
-const appName = "geotaggr";
+const appName = "geotaggr"; //forks may have to change this
 const hostName = window.location.hostname;
 
 const baseUrl = "https://" + hostName + "/" + appName; //forks may have to change this
@@ -41,7 +41,7 @@ const inputErrorClasses =
 const disabledClasses = "dark:bg-gray-500";
 
 eGithub.onclick = () => {
-  window.open("https://" + window.location.hostname, "_blank");
+  window.open("https://" + window.location.hostname + "/" + appName, "_blank");
 };
 
 eGame.onfocus = () => {
