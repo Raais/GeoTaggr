@@ -21,7 +21,11 @@ const eNotesText = document.getElementById("notes-text");
 const eNotesToggle = document.getElementById("notes-toggle");
 const eMap = document.getElementById("map");
 
-const appName = "geotaggr"; //forks may have to change this
+//forks may have to change these
+const ghRepo = "geotaggr";
+const ghUser = "raais";
+const hostName = ghUser + ".github.io";
+const indexUrl = "https://" + hostName + "/" + ghRepo;
 
 var hoveringDropZone = false;
 
@@ -180,7 +184,7 @@ eNotesToggle.onclick = toggleNotes;
 
 //Events - Return
 eReturn.onclick = () => {
-  window.open("https://" + window.location.hostname + "/" + appName, "_blank");
+  window.open(indexUrl, "_blank");
 };
 
 //Game configuration
