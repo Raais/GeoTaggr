@@ -21,9 +21,6 @@ const eNotesText = document.getElementById("notes-text");
 const eNotesToggle = document.getElementById("notes-toggle");
 const eMap = document.getElementById("map");
 
-const ghUser = "raais";
-const ghRepo = "geotaggr";
-
 var hoveringDropZone = false;
 
 //Canvas
@@ -181,7 +178,7 @@ eNotesToggle.onclick = toggleNotes;
 
 //Events - Return
 eReturn.onclick = () => {
-  window.open("https://" + ghUser + ".github.io/" + ghRepo, "_blank");
+  window.open("https://" + window.location.hostname, "_blank");
 };
 
 //Game configuration

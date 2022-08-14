@@ -29,12 +29,10 @@ const eUrlcodeCopy = document.getElementById("urlcode-copy");
 const eUnmasked = document.getElementById("unmasked");
 const eUnmaskedCopy = document.getElementById("unmasked-copy");
 
-const ghUser = "raais";
-const ghRepo = "geotaggr";
+const appName = "geotaggr";
+const hostName = window.location.hostname;
 
-//const hostName = window.location.hostname;
-const hostName = ghUser + ".github.io";
-const baseUrl = "https://" + hostName + "/" + ghRepo;
+const baseUrl = "https://" + hostName + "/" + appName; //forks may have to change this
 const gameFile = "game"; //omit .html for neatness
 
 const inputErrorClasses =
@@ -43,7 +41,7 @@ const inputErrorClasses =
 const disabledClasses = "dark:bg-gray-500";
 
 eGithub.onclick = () => {
-  window.open("https://github.com/" + ghUser + "/" + ghRepo, "_blank");
+  window.open("https://" + window.location.hostname, "_blank");
 };
 
 eGame.onfocus = () => {

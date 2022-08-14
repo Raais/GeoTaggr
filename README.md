@@ -6,7 +6,7 @@ Create [GeoGuessr](https://geoguessr.com) style pinpointing challenges for photo
 
 ### [Play Here](https://raais.github.io/geotaggr)
 
-#### [Example Game Here](https://raais.github.io/geotaggr/game?code=MjkuNjU3OTUwOTAyNTQwOTM2LDkxLjExNzAyODg4MTI2NjUmaHR0cHMlM0ElMkYlMkZpLmltZ3VyLmNvbSUyRndXdVI3Q1YuanBlZw)
+#### [Example Game Here](https://raais.github.io/geotaggr/game?code=MjkuNjU1NDkxODUxMTQyNzM4LDkxLjExODU3NjUxNTgzMzc3Jmh0dHBzJTNBJTJGJTJGaS5pbWd1ci5jb20lMkZ3V3VSN0NWLmpwZWc)
 
 ## How to play?
 
@@ -26,9 +26,9 @@ Create [GeoGuessr](https://geoguessr.com) style pinpointing challenges for photo
 
 ## Disclaimer
 
-GeoTaggr is not a GeoGuessr clone. It does not feature random locations from Google Street View, Mapillary, etc. Every "game" is a user generated challenge meant for other users.
+GeoTaggr is not a GeoGuessr clone. It does not feature random locations from Google Street View, Mapillary, etc. Every GeoTaggr game is a user generated challenge meant for other users.
 
-It was designed especially as a convenience for pinpointing challenges like [GeoDetective](https://www.youtube.com/results?search_query=geodetective) games.
+It was made especially as a convenience for pinpointing challenges like [GeoDetective](https://www.youtube.com/results?search_query=geodetective) games.
 
 ## Self host
 
