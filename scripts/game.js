@@ -90,6 +90,19 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Insert") {
+    if (canvas.getActiveObjects().length == 1) {
+      if (canvas.getActiveObjects()[0].get("type") == "image") {
+        window.open(
+          canvas.getActiveObjects()[0]._originalElement.currentSrc,
+          "_blank"
+        );
+      }
+    }
+  }
+});
+
 document.addEventListener("paste", (event) => {
   if (event.clipboardData.getData("text/plain").startsWith("http")) {
     addImageFromUrl(event.clipboardData.getData("text/plain"));
