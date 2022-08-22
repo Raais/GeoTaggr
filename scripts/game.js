@@ -77,10 +77,15 @@ canvas.on("mouse:up", function () {
   this.selection = true;
 });
 
-canvas.on("mouse:dblclick", function () {
-  if (canvas.getActiveObjects().length == 1) {
-    canvas.getActiveObjects()[0].hasControls =
-      !canvas.getActiveObjects()[0].hasControls;
+canvas.on("mouse:dblclick", function (opt) {
+  let evt = opt.e;
+  if (evt.ctrlKey === false) {
+    if (canvas.getActiveObjects().length == 1) {
+      canvas.getActiveObjects()[0].hasControls =
+        !canvas.getActiveObjects()[0].hasControls;
+    }
+  } else {
+    openSelectedImage();
   }
 });
 
@@ -497,6 +502,17 @@ function deleteSelectedObjects() {
     canvas.remove(obj);
   });
   canvas.discardActiveObject().renderAll();
+}
+
+function openSelectedImage() {
+  if (canvas.getActiveObjects().length == 1) {
+    if (canvas.getActiveObjects()[0].get("type") == "image") {
+      window.open(
+        canvas.getActiveObjects()[0]._originalElement.currentSrc,
+        "_blank"
+      );
+    }
+  }
 }
 
 function showDropZone() {
