@@ -30,7 +30,7 @@ const eUnmasked = document.getElementById("unmasked");
 const eUnmaskedCopy = document.getElementById("unmasked-copy");
 
 //forks may have to change these
-const ghRepo = "geotaggr";
+const ghRepo = "GeoTaggr";
 const ghUser = "raais";
 const ghUrl = "https://github.com/" + ghUser + "/" + ghRepo;
 const hostName = ghUser + ".github.io";

@@ -22,7 +22,7 @@ const eNotesToggle = document.getElementById("notes-toggle");
 const eMap = document.getElementById("map");
 
 //forks may have to change these
-const ghRepo = "geotaggr";
+const ghRepo = "GeoTaggr";
 const ghUser = "raais";
 const hostName = ghUser + ".github.io";
 const indexUrl = "https://" + hostName + "/" + ghRepo;

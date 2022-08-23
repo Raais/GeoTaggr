@@ -4,9 +4,9 @@ Create [GeoGuessr](https://geoguessr.com) style pinpointing challenges for photo
 
 ![Screenshot](https://user-images.githubusercontent.com/64605172/184509255-ffa4e22c-52f0-4e8e-855c-b257ab53e425.png)
 
-### [Play Here](https://raais.github.io/geotaggr)
+### [Play Here](https://raais.github.io/GeoTaggr)
 
-#### [Example Game Here](https://raais.github.io/geotaggr/game?code=MjkuNjU1NDkxODUxMTQyNzM4LDkxLjExODU3NjUxNTgzMzc3Jmh0dHBzJTNBJTJGJTJGaS5pbWd1ci5jb20lMkZ3V3VSN0NWLmpwZWc)
+#### [Example Game Here](https://raais.github.io/GeoTaggr/game?code=MjkuNjU1NDkxODUxMTQyNzM4LDkxLjExODU3NjUxNTgzMzc3Jmh0dHBzJTNBJTJGJTJGaS5pbWd1ci5jb20lMkZ3V3VSN0NWLmpwZWc)
 
 ## How to play?
 
@@ -34,8 +34,8 @@ It was made especially as a convenience for pinpointing challenges like [GeoDete
 
 This deployment uses Google Maps API with a limited quota per day due to costs.
 If you want to self host, fork this repo, create your own API key on Google Maps Platform
-(set restrictions and quotas), replace with yours at the bottom of [game.html](https://github.com/raais/geotaggr/blob/main/game.html)
+(set restrictions and quotas), replace with yours at the bottom of [game.html](https://github.com/raais/GeoTaggr/blob/main/game.html)
 
 ## License
 
-This is an open source project under the [MIT License](https://github.com/raais/geotaggr/blob/main/LICENSE). It is **NOT ASSOCIATED WITH [GEOGUESSR.COM](https://geoguessr.com)**
+This is an open source project under the [MIT License](https://github.com/raais/GeoTaggr/blob/main/LICENSE). It is **NOT ASSOCIATED WITH [GEOGUESSR.COM](https://geoguessr.com)**
