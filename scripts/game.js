@@ -356,7 +356,7 @@ eGuess.onclick = guess;
 //spacebar to guess
 document.addEventListener("keypress", (e) => {
   if (e.key === " ") {
-    if (placed) {
+    if (placed && !guessed) {
       guess();
     }
   }
