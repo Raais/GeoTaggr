@@ -239,6 +239,9 @@ eRightClickMenuButton.onclick = () => {
       let lng = parseFloat(coords.split(",")[1]);
       coords = { lat: lat, lng: lng };
       placeMarker(coords);
+      if (eGuess.style.visibility == "hidden") {
+        eGuess.style.visibility = "visible";
+      }
     }
   }
 };
@@ -317,8 +320,6 @@ var playerSubmission = { lat: 0, lng: 0 };
 var playerMarker;
 var playerDistance;
 
-var once = false;
-
 const eGuess = document.getElementById("guess");
 const eResult = document.getElementById("result");
 const eResultScore = document.getElementById("result-score");
@@ -337,9 +338,8 @@ async function mapInit() {
 
   google.maps.event.addListener(map, "click", function (event) {
     placeMarker(event.latLng);
-    if (!once) {
+    if (eGuess.style.visibility == "hidden") {
       eGuess.style.visibility = "visible";
-      once = true;
     }
   });
 }
@@ -350,7 +350,7 @@ eGuess.onclick = guess;
 //spacebar to guess
 document.addEventListener("keypress", (e) => {
   if (e.key === " ") {
-    if (once) {
+    if (eGuess.style.visibility == "visible") {
       guess();
     }
   }
