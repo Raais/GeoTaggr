@@ -39,6 +39,7 @@ const indexUrl = "https://" + hostName + "/" + ghRepo;
 
 var hoveringDropZone = false;
 var mapInitialized = false;
+var once = false;
 
 //Canvas
 var canvas = new fabric.Canvas("canvas");
@@ -245,8 +246,9 @@ eRightClickMenuButton.onclick = () => {
       let lng = parseFloat(coords.split(",")[1]);
       coords = { lat: lat, lng: lng };
       placeMarker(coords);
-      if (eGuess.style.visibility == "hidden") {
+      if (!once) {
         eGuess.style.visibility = "visible";
+        once = true;
       }
     }
   }
@@ -338,8 +340,9 @@ async function mapInit() {
 
   google.maps.event.addListener(map, "click", function (event) {
     placeMarker(event.latLng);
-    if (eGuess.style.visibility == "hidden") {
+    if (!once) {
       eGuess.style.visibility = "visible";
+      once = true;
     }
   });
 }
@@ -350,7 +353,7 @@ eGuess.onclick = guess;
 //spacebar to guess
 document.addEventListener("keypress", (e) => {
   if (e.key === " ") {
-    if (eGuess.style.visibility == "visible") {
+    if (once) {
       guess();
     }
   }
