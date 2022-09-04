@@ -20,6 +20,10 @@ const eNotes = document.getElementById("notes");
 const eNotesText = document.getElementById("notes-text");
 const eNotesToggle = document.getElementById("notes-toggle");
 const eMap = document.getElementById("map");
+const eRightClickMenu = document.getElementById("rightclickmenu");
+const eRightClickMenuRect = document.getElementById("rightclickmenu-rect");
+const eRightClickMenuInput = document.getElementById("rightclickmenu-input");
+const eRightClickMenuButton = document.getElementById("rightclickmenu-button");
 
 //forks may have to change these
 const ghRepo = "GeoTaggr";
@@ -28,6 +32,7 @@ const hostName = ghUser + ".github.io";
 const indexUrl = "https://" + hostName + "/" + ghRepo;
 
 var hoveringDropZone = false;
+var mapInitialized = false;
 
 //Canvas
 var canvas = new fabric.Canvas("canvas");
@@ -192,6 +197,60 @@ eReturn.onclick = () => {
   window.open(indexUrl, "_blank");
 };
 
+//Events - Context Menu
+document.addEventListener("contextmenu", (event) => {
+  event.preventDefault();
+});
+
+eMap.oncontextmenu = (event) => {
+  event.preventDefault();
+  let mapRect = eMap.getBoundingClientRect();
+  let menuRect = eRightClickMenuRect.getBoundingClientRect();
+  let x = event.clientX - mapRect.left;
+  if (x + menuRect.width > mapRect.width) {
+    x = mapRect.width - menuRect.width;
+  }
+  let y = event.clientY - mapRect.top;
+  eRightClickMenu.style.position = "absolute";
+  eRightClickMenu.style.top = y + "px";
+  eRightClickMenu.style.left = x + "px";
+  eRightClickMenu.style.visibility = "visible";
+  eRightClickMenuInput.focus();
+};
+
+document.addEventListener("mousedown", (event) => {
+  if (
+    !(
+      event.target == eRightClickMenuInput ||
+      event.target == eRightClickMenuButton
+    )
+  ) {
+    eRightClickMenu.style.visibility = "hidden";
+  }
+});
+
+eRightClickMenuButton.onclick = () => {
+  eRightClickMenu.style.visibility = "hidden";
+  let coords = eRightClickMenuInput.value;
+  if (mapInitialized) {
+    if (validateCoordinates(coords)) {
+      coords = coords.replace(/\s/g, "");
+      let lat = parseFloat(coords.split(",")[0]);
+      let lng = parseFloat(coords.split(",")[1]);
+      coords = { lat: lat, lng: lng };
+      placeMarker(coords);
+    }
+  }
+};
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    if (document.activeElement == eRightClickMenuInput) {
+      eRightClickMenuButton.click();
+    }
+  }
+});
+
 //Game configuration
 const urlSearchParams = new URLSearchParams(window.location.search);
 
@@ -267,6 +326,8 @@ const eResultDistance = document.getElementById("result-distance-km");
 const eResultProgress = document.getElementById("result-progress-per");
 
 async function mapInit() {
+  mapInitialized = true;
+
   map = new google.maps.Map(eMap, {
     center: { lat: 0, lng: 0 },
     zoom: 2,
