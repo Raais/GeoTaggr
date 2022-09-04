@@ -19,11 +19,17 @@ const eCanvasContainer = document.getElementById("canvas-container");
 const eNotes = document.getElementById("notes");
 const eNotesText = document.getElementById("notes-text");
 const eNotesToggle = document.getElementById("notes-toggle");
+
 const eMap = document.getElementById("map");
 const eRightClickMenu = document.getElementById("rightclickmenu");
 const eRightClickMenuRect = document.getElementById("rightclickmenu-rect");
 const eRightClickMenuInput = document.getElementById("rightclickmenu-input");
 const eRightClickMenuButton = document.getElementById("rightclickmenu-button");
+const eGuess = document.getElementById("guess");
+const eResult = document.getElementById("result");
+const eResultScore = document.getElementById("result-score");
+const eResultDistance = document.getElementById("result-distance-km");
+const eResultProgress = document.getElementById("result-progress-per");
 
 //forks may have to change these
 const ghRepo = "GeoTaggr";
@@ -319,12 +325,6 @@ const gameAnswer = gameCoords;
 var playerSubmission = { lat: 0, lng: 0 };
 var playerMarker;
 var playerDistance;
-
-const eGuess = document.getElementById("guess");
-const eResult = document.getElementById("result");
-const eResultScore = document.getElementById("result-score");
-const eResultDistance = document.getElementById("result-distance-km");
-const eResultProgress = document.getElementById("result-progress-per");
 
 async function mapInit() {
   mapInitialized = true;
