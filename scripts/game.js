@@ -39,7 +39,8 @@ const indexUrl = "https://" + hostName + "/" + ghRepo;
 
 var hoveringDropZone = false;
 var mapInitialized = false;
-var once = false;
+var guessed = false;
+var placed = false;
 
 //Canvas
 var canvas = new fabric.Canvas("canvas");
@@ -210,19 +211,21 @@ document.addEventListener("contextmenu", (event) => {
 });
 
 eMap.oncontextmenu = (event) => {
-  event.preventDefault();
-  let mapRect = eMap.getBoundingClientRect();
-  let menuRect = eRightClickMenuRect.getBoundingClientRect();
-  let x = event.clientX - mapRect.left;
-  if (x + menuRect.width > mapRect.width) {
-    x = mapRect.width - menuRect.width;
+  if (!guessed) {
+    event.preventDefault();
+    let mapRect = eMap.getBoundingClientRect();
+    let menuRect = eRightClickMenuRect.getBoundingClientRect();
+    let x = event.clientX - mapRect.left;
+    if (x + menuRect.width > mapRect.width) {
+      x = mapRect.width - menuRect.width;
+    }
+    let y = event.clientY - mapRect.top;
+    eRightClickMenu.style.position = "absolute";
+    eRightClickMenu.style.top = y + "px";
+    eRightClickMenu.style.left = x + "px";
+    eRightClickMenu.style.visibility = "visible";
+    eRightClickMenuInput.focus();
   }
-  let y = event.clientY - mapRect.top;
-  eRightClickMenu.style.position = "absolute";
-  eRightClickMenu.style.top = y + "px";
-  eRightClickMenu.style.left = x + "px";
-  eRightClickMenu.style.visibility = "visible";
-  eRightClickMenuInput.focus();
 };
 
 document.addEventListener("mousedown", (event) => {
@@ -246,9 +249,9 @@ eRightClickMenuButton.onclick = () => {
       let lng = parseFloat(coords.split(",")[1]);
       coords = { lat: lat, lng: lng };
       placeMarker(coords);
-      if (!once) {
+      if (!placed) {
         eGuess.style.visibility = "visible";
-        once = true;
+        placed = true;
       }
     }
   }
@@ -340,9 +343,9 @@ async function mapInit() {
 
   google.maps.event.addListener(map, "click", function (event) {
     placeMarker(event.latLng);
-    if (!once) {
+    if (!placed) {
       eGuess.style.visibility = "visible";
-      once = true;
+      placed = true;
     }
   });
 }
@@ -353,7 +356,7 @@ eGuess.onclick = guess;
 //spacebar to guess
 document.addEventListener("keypress", (e) => {
   if (e.key === " ") {
-    if (once) {
+    if (placed) {
       guess();
     }
   }
@@ -446,6 +449,8 @@ function guess() {
 
   eGuess.style.visibility = "hidden";
   eResult.style.visibility = "visible";
+
+  guessed = true;
 }
 
 document.getElementById("result-button-1").onclick = openInGoogleMaps;
